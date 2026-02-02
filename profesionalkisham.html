@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Kisham Salash | ICT Professional • Political Analyst • Tech Leader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e40af;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --tech-color: #6366f1;
+            --light-color: #f8fafc;
+            --text-color: #334155;
+            --text-light: #64748b;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --border-radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-top: 15px;
+            color: #e2e8f0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Content Sections */
+        section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 30px;
+        }
+        
+        .role-tag {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .role-tag:nth-child(odd) {
+            background-color: #e0f2fe;
+        }
+        
+        .role-tag.tech {
+            background-color: #e0e7ff;
+            color: var(--tech-color);
+        }
+        
+        blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px 25px;
+            margin: 25px 0;
+            background-color: #f8fafc;
+            font-style: italic;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+        
+        blockquote p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--primary-color);
+        }
+        
+        .quote-source {
+            margin-top: 10px;
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .project-card {
+            border: 1px solid #e2e8f0;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            border-color: var(--secondary-color);
+        }
+        
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .project-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        
+        /* Social Media Links */
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+            background-color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .facebook .social-icon {
+            background-color: #1877f2;
+        }
+        
+        .instagram .social-icon {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+        
+        .twitter .social-icon {
+            background-color: #1da1f2;
+        }
+        
+        .youtube .social-icon {
+            background-color: #ff0000;
+        }
+        
+        .tiktok .social-icon {
+            background-color: #000000;
+        }
+        
+        .linkedin .social-icon {
+            background-color: #0a66c2;
+        }
+        
+        .phone .social-icon {
+            background-color: var(--accent-color);
+        }
+        
+        .github .social-icon {
+            background-color: #333333;
+        }
+        
+        .social-text strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .social-text span {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        /* Leadership Badge */
+        .leadership-badge {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: #92400e;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .copyright {
+            margin-top: 10px;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+            
+            section {
+                padding: 30px;
+            }
+            
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .role-tag {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>David Kisham Salash</h1>
+            <p class="tagline">"Bridging Technology with Leadership for Sustainable Development"</p>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h2>About</h2>
+            <div class="roles">
+                <div class="role-tag tech">ICT Professional</div>
+                <div class="role-tag">Political Analyst</div>
+                <div class="role-tag tech">Full-Stack Developer</div>
+                <div class="role-tag">Leadership Consultant</div>
+                <div class="role-tag tech">System Architect</div>
+                <div class="role-tag">Youth Mentor</div>
+                <div class="role-tag tech">Web Solutions Expert</div>
+                <div class="role-tag">Community Leader</div>
+            </div>
+            <p>
+                David Kisham Salash is a Kenyan ICT professional and political analyst with extensive experience in technology solutions and leadership. 
+                A former member of the National Youth Service (NYS) Kenya, David combines technical expertise with leadership skills to create impactful 
+                digital solutions that address real-world challenges in Kenya and beyond.
+            </p>
+            <div class="leadership-badge">Former Member - National Youth Service (NYS) Kenya</div>
+        </section>
+        
+        <section id="tech-expertise">
+            <h2>ICT & Technical Expertise</h2>
+            <p>
+                With years of experience in the tech industry, David specializes in full-stack development, system architecture, and creating scalable 
+                digital solutions. His technical skills span across multiple programming languages, frameworks, and platforms.
+            </p>
+            
+            <h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.4rem;">Core Technical Competencies:</h3>
+            <ul style="columns: 2; margin-left: 20px;">
+                <li style="margin-bottom: 8px;">Frontend Development (HTML5, CSS3, JavaScript, React)</li>
+                <li style="margin-bottom: 8px;">Backend Development (Node.js, PHP, Python, Django)</li>
+                <li style="margin-bottom: 8px;">Database Management (MySQL, MongoDB, PostgreSQL)</li>
+                <li style="margin-bottom: 8px;">Mobile Application Development</li>
+                <li style="margin-bottom: 8px;">UI/UX Design & Prototyping</li>
+                <li style="margin-bottom: 8px;">Cloud Computing & Deployment</li>
+                <li style="margin-bottom: 8px;">System Integration & API Development</li>
+                <li style="margin-bottom: 8px;">Cybersecurity Fundamentals</li>
+            </ul>
+        </section>
+        
+        <section id="projects">
+            <h2>Notable Projects & Systems</h2>
+            <p>
+                David has designed and implemented numerous systems and websites, demonstrating his ability to solve diverse problems through technology:
+            </p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Pesa Afric</h3>
+                    <p>A comprehensive fintech platform facilitating digital payments, money transfers, and financial management for African markets.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>AIC Kimana Church Website</h3>
+                    <p>Official website for AIC Kimana Church featuring event management, sermon archives, donation system, and community engagement tools.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Campus Online Voting System</h3>
+                    <p>A secure, transparent digital voting platform for university student elections with real-time results and voter verification.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Professional Portfolios</h3>
+                    <p>Custom-designed portfolio websites for professionals across various industries, showcasing their work and expertise.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Local Farmers Market Platform</h3>
+                    <p>A digital marketplace connecting local farmers directly with consumers, featuring inventory management and online ordering.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Community Resource Portal</h3>
+                    <p>A centralized platform for community information, resources, and communication channels for local organizations.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="leadership">
+            <h2>Leadership & Public Service</h2>
+            <p>
+                Building on his experience with the National Youth Service, David has developed strong leadership capabilities that complement his 
+                technical expertise. He focuses on youth empowerment, community development, and ethical leadership in the digital age.
+            </p>
+            <blockquote>
+                <p>"True leadership is about empowering others and creating systems that work for everyone. Technology amplifies our capacity to serve and connect."</p>
+                <div class="quote-source">— David Kisham Salash</div>
+            </blockquote>
+            
+            <h3 style="margin-top: 25px; margin-bottom: 15px; font-size: 1.4rem;">Leadership Focus Areas:</h3>
+            <ul style="margin-left: 20px;">
+                <li style="margin-bottom: 10px;"><strong>Youth Mentorship:</strong> Guiding young professionals in technology and leadership development</li>
+                <li style="margin-bottom: 10px;"><strong>Community Engagement:</strong> Leveraging technology for social impact and community development</li>
+                <li style="margin-bottom: 10px;"><strong>Political Analysis:</strong> Providing data-driven insights on governance and policy matters</li>
+                <li style="margin-bottom: 10px;"><strong>Digital Literacy:</strong> Promoting technology adoption and skills development in underserved communities</li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact & Social Media</h2>
+            <div class="social-links">
+                <a href="tel:0714169285" class="social-link phone">
+                    <div class="social-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Phone</strong>
+                        <span>0714 169 285</span>
+                    </div>
+                </a>
+                
+                <a href="https://facebook.com/davidkishamsalash" target="_blank" class="social-link facebook">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Facebook</strong>
+                        <span>@davidkisham</span>
+                    </div>
+                </a>
+                
+                <a href="https://instagram.com/davidkisham" target="_blank" class="social-link instagram">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>Instagram</strong>
+                        <span>@davidkisham</span>
+                    </div>
+                </a>
+                
+                <a href="https://twitter.com/davidkisham" target="_blank" class="social-link twitter">
+                    <div class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>X (Twitter)</strong>
+                        <span>@davidkisham</span>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/davidkisham" target="_blank" class="social-link linkedin">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>LinkedIn</strong>
+                        <span>@davidkisham</span>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/devdavidkisham" target="_blank" class="social-link github">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-text">
+                        <strong>GitHub</strong>
+                        <span>@devdavidkisham</span>
+                        
+                    </div>
+
+                    <a href="https://tiktok.com/davidkisham" target="_blank" class="social-link github">
+                        <div class="social-icon">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <div class="social-text">
+                            <strong>Tiktok</strong>
+                            <span>@davidkisham</span>
+                            
+                        </div>
+                </a>
+            </div>
+            <p style="margin-top: 20px; font-style: italic; color: var(--text-light);">
+                Available for consulting, system development, political analysis, and leadership training.
+            </p>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 David Kisham Salash. All rights reserved.</p>
+            <p class="copyright">ICT Professional • Political Analyst • Tech Leader • Former NYS Member</p>
+        </div>
+    </footer>
+</body>
+</html>
